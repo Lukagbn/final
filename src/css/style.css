@@ -1,0 +1,103 @@
+@font-face {
+  font-family: "PoppinsBold";
+  src: url("../fonts/Poppins-Bold.woff2") format("woff2"),
+    url("../fonts/Poppins-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PoppinsRegular";
+  src: url("../fonts/Poppins-Regular.woff2") format("woff2"),
+    url("../fonts/Poppins-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PoppinsSemiBold";
+  src: url("../fonts/Poppins-SemiBold.woff2") format("woff2"),
+    url("../fonts/Poppins-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Bebas Neue";
+  src: url("../fonts/BebasNeue-Regular.woff2") format("woff2"),
+    url("../fonts/BebasNeue-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "PoppinsRegular";
+  font-weight: 400;
+}
+body {
+  background-color: #1e1e1e;
+}
+.container {
+  max-width: 1420px;
+  width: 100%;
+  margin: auto;
+}
+header.container {
+  margin-top: 61px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav {
+  display: flex;
+  gap: 38px;
+  align-items: center;
+}
+ul {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+}
+ul li {
+  line-height: 100%;
+}
+header a {
+  font-size: 21px;
+  letter-spacing: 0.63px;
+}
+header a,
+button {
+  color: #ffffff;
+}
+header a {
+  text-decoration: none;
+}
+button {
+  background-color: #fd6f00;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+}
+button p {
+  font-size: 21px;
+  padding: 18px;
+  letter-spacing: 0.63px;
+  padding-block: 10px;
+}
+.logo {
+  font-family: "Bebas Neue";
+  font-size: 28px;
+  color: #c7c7c7;
+  line-height: 100%;
+  letter-spacing: -0.28px;
+}
+.text-container {
+  max-width: 714px;
+  width: 100%;
+}
