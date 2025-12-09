@@ -120,6 +120,7 @@ header a,
   letter-spacing: 0.72px;
 }
 .text-wrapper .description {
+  color: #ffffff;
   font-size: 21px;
   font-family: "PoppinsRegular";
   margin-top: 28px;
@@ -187,4 +188,48 @@ header a,
   max-width: 32.48px;
   width: 100%;
   cursor: pointer;
+}
+.text-wrapper h2 {
+  font-family: "PoppinsSemiBold";
+  line-height: 100%;
+  font-size: 65px;
+  letter-spacing: 1.95px;
+  color: #ffffff;
+}
+.img-wrapper .about-bottom-img {
+  max-width: 545px;
+  width: 100%;
+}
+.diagram {
+  margin-top: 15px#FD6F00;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.diagram .slide {
+  position: relative;
+  display: block;
+  height: 12px;
+  width: 100%;
+  background-color: #c7c7c7;
+  border-radius: 6px;
+}
+.diagram .fill {
+  position: absolute;
+  width: 72%;
+  background-color: #fd6f00;
+  height: 100%;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+.diagram .circle {
+  position: absolute;
+  top: 50%;
+  left: 70%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  height: 32px;
+  width: 32px;
+  background-color: #edecec;
+  border: 3px solid #fd6f00;
 }
