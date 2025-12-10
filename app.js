@@ -7,7 +7,7 @@ function sliderAnimation(index, width, left) {
   diagramFill[index].style.width = `${width}%`;
   diagramCircle[index].style.left = `${left}%`;
 }
-// animating sliders
+// animating diagram sliders
 const options = {
   root: null,
   threshold: 0.3,
@@ -27,12 +27,20 @@ const observer = new IntersectionObserver((entries) => {
 }, options);
 observer.observe(profileSlider);
 
-// slider
+// carousel slider
 const slide = document.querySelectorAll(".testimonials-slide");
 const dot = document.querySelectorAll(".dot");
 let activeIndex = 0;
 let intervalId = null;
 
+function checkForActive() {
+  slide.forEach((el) => {
+    if (!el.classList.contains("active")) {
+      slide[0].classList.toggle("active");
+    }
+  });
+}
+checkForActive();
 function updateSlider() {
   slide.forEach((el, index) => {
     el.classList.toggle("active", activeIndex === index);
@@ -43,11 +51,12 @@ function updateSlider() {
 }
 function autoSlider() {
   intervalId = setInterval(() => {
+    checkForActive();
     updateSlider();
     activeIndex++;
     if (activeIndex > slide.length - 1) activeIndex = 0;
     if (activeIndex > dot.length - 1) activeIndex = 0;
-  }, 5000);
+  }, 1000);
 }
 autoSlider();
 dot.forEach((el, index) => {
