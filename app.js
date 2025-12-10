@@ -26,3 +26,43 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, options);
 observer.observe(profileSlider);
+
+// slider
+const slide = document.querySelectorAll(".testimonials-slide");
+const dot = document.querySelectorAll(".dot");
+let activeIndex = 0;
+let intervalId = null;
+
+function updateSlider() {
+  slide.forEach((el, index) => {
+    el.classList.toggle("active", activeIndex === index);
+  });
+  dot.forEach((el, index) => {
+    el.classList.toggle("active", activeIndex === index);
+  });
+}
+function autoSlider() {
+  intervalId = setInterval(() => {
+    updateSlider();
+    activeIndex++;
+    if (activeIndex > slide.length - 1) activeIndex = 0;
+    if (activeIndex > dot.length - 1) activeIndex = 0;
+  }, 5000);
+}
+autoSlider();
+dot.forEach((el, index) => {
+  el.addEventListener("click", () => {
+    clearInterval(intervalId);
+    activeIndex = index;
+    updateSlider();
+    autoSlider();
+  });
+});
+slide.forEach((el) => {
+  el.addEventListener("mouseenter", () => {
+    clearInterval(intervalId);
+  });
+  el.addEventListener("mouseleave", () => {
+    autoSlider();
+  });
+});

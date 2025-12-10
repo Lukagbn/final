@@ -1,0 +1,36 @@
+const slide = document.querySelectorAll(".testimonials-slide");
+const dots = document.querySelectorAll(".dot");
+let intervalId = null;
+let activeIndex = 0;
+function updateIndex() {
+  slide.forEach((el, index) => {
+    if (activeIndex === index) {
+      el.classList.add("active");
+    } else {
+      el.classList.remove("active");
+    }
+  });
+  dots.forEach((el, index) => {
+    if (activeIndex === index) {
+      el.classList.add("active");
+    } else {
+      el.classList.remove("active");
+    }
+  });
+}
+function AutoSlider() {
+  intervalId = setInterval(() => {
+    activeIndex++;
+    if (activeIndex > slide.length - 1) {
+      activeIndex = 0;
+    }
+    updateIndex();
+  }, 3000);
+}
+AutoSlider();
+slide[activeIndex].addEventListener("mouseenter", () => {
+  clearInterval(intervalId);
+});
+slide[activeIndex].addEventListener("mouseleave", () => {
+  AutoSlider();
+});
