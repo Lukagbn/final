@@ -430,6 +430,9 @@ header a,
   letter-spacing: 0.48px;
   text-align: justify;
 }
+.testimonials-slide-wrapper-img .position {
+  display: none;
+}
 .position {
   display: flex;
   flex-direction: column;

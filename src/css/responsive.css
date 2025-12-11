@@ -87,6 +87,7 @@
   .service-card-container {
     flex-direction: column;
     gap: 22px;
+    align-items: center;
   }
   .myProjects-container h2 {
     font-size: 36px;
@@ -110,5 +111,53 @@
     margin-top: 47px;
     flex-direction: column;
     gap: 40px;
+  }
+  .testimonials-text-container h2 {
+    font-size: 36px;
+  }
+  .testimonials-text-container {
+    text-align: start;
+  }
+  .testimonials-text-container p {
+    text-align: start;
+  }
+  .testimonials-slider-container {
+    margin-top: 30px;
+  }
+  .testimonials-slide {
+    max-width: 347px;
+    height: 500px;
+  }
+  .testimonials-slide-wrapper-img {
+    align-self: flex-start;
+    display: flex;
+    align-items: center;
+    gap: 21px;
+  }
+  .testimonials-slide-wrapper-img img {
+    max-width: 125px;
+    width: 100%;
+  }
+  .testimonials-slide-wrapper {
+    flex-direction: column;
+    padding-inline: 22px;
+  }
+  .testimonials-slide-wrapper-text .position {
+    display: none;
+  }
+  .testimonials-slide-wrapper-img .position {
+    display: flex;
+    gap: 17px;
+  }
+  .testimonials-slide-wrapper-text p::before {
+    bottom: 95%;
+    left: -5%;
+  }
+  .testimonials-slide-wrapper-text p::after {
+    top: 92.5%;
+    margin-left: 7px;
+  }
+  .slider-dots {
+    margin-top: 38px;
   }
 }
