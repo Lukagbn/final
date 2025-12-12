@@ -95,6 +95,23 @@ header a,
 }
 .burger-btn {
   display: none;
+  transition: 0.3s ease-in-out;
+}
+.burger-btn img {
+  transition: 0.3s ease-in-out;
+}
+.cv-btn {
+  transition: 0.4s ease-in-out;
+}
+.cv-btn:hover {
+  color: #fd6f00;
+  background-color: #ffffff;
+}
+.header-nav ul li a {
+  transition: text-shadow 0.4s ease-in-out;
+}
+.header-nav ul li a:hover {
+  text-shadow: 3px 3px 3px #ffff;
 }
 .header-nav ul button {
   background-color: #fd6f00;
@@ -107,14 +124,12 @@ header a,
   padding-block: 10px;
   text-align: justify;
 }
-
 .profile-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 120px;
 }
-
 .text-wrapper {
   max-width: 714px;
   width: 100%;
@@ -334,6 +349,7 @@ header a,
   letter-spacing: 0.72px;
   text-align: center;
   white-space: nowrap;
+  transition: 0.4s ease-in-out;
 }
 .myProjects-container .btn-container button[active] {
   background-color: #fd6f00;
@@ -456,6 +472,7 @@ header a,
   background-color: #d9d9d9;
   border-radius: 8px;
   cursor: pointer;
+  transition: 0.5s ease-in-out;
 }
 .dot.active {
   background-color: #fd6f00;
@@ -518,6 +535,12 @@ textarea::placeholder {
   border: none;
   color: #ffffff;
   margin-top: -10px;
+  transition: 0.4s ease-in-out;
+  cursor: pointer;
+}
+.contact-form-container input[type="submit"]:hover {
+  color: #fd6f00;
+  background-color: #ffffff;
 }
 .footer-navigation {
   display: flex;
@@ -525,6 +548,12 @@ textarea::placeholder {
   justify-content: center;
   margin-top: 290px;
   gap: 40px;
+}
+.footer-navigation.container a {
+  transition: text-shadow 0.4s ease-in-out;
+}
+.footer-navigation.container a:hover {
+  text-shadow: 3px 3px 3px #ffff;
 }
 .footer-navigation a {
   font-size: 21px;

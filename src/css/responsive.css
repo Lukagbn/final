@@ -9,6 +9,7 @@
   }
   .header-nav ul {
     display: none;
+    gap: 30px;
     flex-direction: column;
     position: absolute;
     width: 100%;
@@ -16,6 +17,17 @@
     left: 0;
     text-align: center;
     top: 10%;
+  }
+  .burger-btn img.rotate {
+    transform: rotate(90deg);
+  }
+  .burger-btn.rotate {
+    transform: rotate(90deg);
+  }
+  .header-nav ul.active {
+    display: flex;
+    background-color: #121212;
+    padding-block: 15px;
   }
   .burger-btn {
     display: block;

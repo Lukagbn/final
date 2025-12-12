@@ -7,6 +7,15 @@ function sliderAnimation(index, width, left) {
   diagramFill[index].style.width = `${width}%`;
   diagramCircle[index].style.left = `${left}%`;
 }
+// burger icon logic
+
+const headerList = document.querySelector(".header-nav ul");
+const burgerIcon = document.querySelector(".burger-btn");
+burgerIcon.addEventListener("click", (el) => {
+  headerList.classList.toggle("active");
+  el.target.classList.toggle("rotate");
+});
+
 // animating diagram sliders
 const options = {
   root: null,
@@ -26,6 +35,17 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, options);
 observer.observe(profileSlider);
+
+// my project button logic
+const btnContainer = document.querySelectorAll(".btn-container button");
+
+btnContainer.forEach((el) => {
+  el.addEventListener("click", () => {
+    btnContainer.forEach((btn) => btn.removeAttribute("active"));
+    el.setAttribute("active", "");
+    console.log(el.value);
+  });
+});
 
 // carousel slider
 const slide = document.querySelectorAll(".testimonials-slide");
