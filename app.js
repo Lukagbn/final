@@ -40,6 +40,9 @@ observer.observe(profileSlider);
 const btnContainer = document.querySelectorAll(".btn-container button");
 
 btnContainer.forEach((el) => {
+  if (el.hasAttribute("active")) {
+    console.log(el.value);
+  }
   el.addEventListener("click", () => {
     btnContainer.forEach((btn) => btn.removeAttribute("active"));
     el.setAttribute("active", "");
