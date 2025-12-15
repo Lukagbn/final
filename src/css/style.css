@@ -362,6 +362,9 @@ header a,
   background-color: #fd6f00;
   color: white;
 }
+.myProjcets-projects-wrapper a {
+  text-decoration: none;
+}
 .myProjcets-projects-wrapper {
   margin-top: 106px;
   display: flex;

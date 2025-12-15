@@ -2,21 +2,21 @@
   {
     "projectName": "BlogNest",
     "projectTitle": "Interactive Design",
-    "projectGitHubUrl": "https://lukagbn.github.io/BlogNest/",
+    "projectUrl": "https://lukagbn.github.io/BlogNest/",
     "projectImg": "https://raw.githubusercontent.com/Lukagbn/final/refs/heads/main/src/img/blognest.webp",
     "projectGroup": "App Design"
   },
   {
     "projectName": "Apex Apartments",
     "projectTitle": "Stunning Visuals",
-    "projectGitHubUrl": "https://github.com/Lukagbn/Apex-Apartments",
+    "projectUrl": "https://lukagbn.github.io/Apex-Apartments/",
     "projectImg": "https://raw.githubusercontent.com/Lukagbn/final/refs/heads/main/src/img/apex-apartments.webp",
     "projectGroup": "Web Design"
   },
   {
     "projectName": "Register",
     "projectTitle": "Simple To Use",
-    "projectGitHubUrl": "https://github.com/Lukagbn/assigment21",
+    "projectUrl": "https://lukagbn.github.io/assigment21/",
     "projectImg": "https://raw.githubusercontent.com/Lukagbn/final/refs/heads/main/src/img/register.webp",
     "projectGroup": "Graphic Design"
   }

@@ -92,7 +92,9 @@ btnContainer.forEach((el) => {
             (element) =>
               `
               <div class="myProjcets-card invisible"data-group="${element.projectGroup}">
+                <a href="${element.projectUrl}" target="_blank">
                 <img src="${element.projectImg}" alt="project image" />
+                </a>
                 <p>${element.projectName}</p>
                 <h3>${element.projectTitle}</h3>
               </div>
@@ -119,7 +121,9 @@ btnContainer.forEach((el) => {
             (element) =>
               `
               <div class="myProjcets-card invisible"data-group="${element.projectGroup}">
-                <img src="${element.projectImg}" alt="project image" />
+                <a href="${element.projectUrl}" target="_blank">
+                  <img src="${element.projectImg}" alt="project image" />
+                </a>
                 <p>${element.projectName}</p>
                 <h3>${element.projectTitle}</h3>
               </div>
