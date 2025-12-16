@@ -593,3 +593,31 @@ textarea::placeholder {
   line-height: 100%;
   width: 100%;
 }
+#dialog {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  border: none;
+  padding: 10px;
+  flex-direction: column;
+}
+#dialog .cross {
+  color: red;
+  font-size: 20px;
+  font-weight: 700;
+  margin-left: auto;
+  cursor: pointer;
+}
+#dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+}
+.dialog-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.overFlow-hidden {
+  overflow: hidden;
+}
