@@ -524,12 +524,11 @@ form {
   grid-template-columns: repeat(3, 1fr);
 }
 textarea {
-  grid-column: 1/4;
-  grid-row: 2;
+  width: 100%;
   border-radius: 14px;
   resize: none;
   border: 1px solid #afafaf;
-  height: 116px;
+  height: 100%;
   outline: none;
   padding-top: 22px;
   padding-left: 25px;
@@ -620,4 +619,11 @@ textarea::placeholder {
 }
 .overFlow-hidden {
   overflow: hidden;
+}
+.form-group:nth-of-type(4) {
+  grid-column: 1 / 4;
+  grid-row: 2;
+}
+.form-group span {
+  color: red;
 }

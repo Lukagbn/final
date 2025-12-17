@@ -298,7 +298,7 @@
       <section id="contact">
         <div class="contact-container container">
           <div class="contact-container-text">
-            <h2>Contact Me</h2>
+            <h2>Contact Us</h2>
             <p>
               Have a project or question? Send us a message, and we’ll get back
               to you shortly.
@@ -306,22 +306,34 @@
           </div>
           <div class="contact-form-container">
             <form action="#" novalidate>
-              <input class="name" type="text" placeholder="Your Name" />
-              <input
-                class="email"
-                type="email"
-                placeholder="Enter Your Email "
-              />
-              <input
-                class="yourWeb"
-                type="text"
-                placeholder="Enter Your Website"
-              />
-              <textarea
-                name="message"
-                class="yourMessage"
-                placeholder="Enter Your Message"
-              ></textarea>
+              <div class="form-group">
+                <input class="name" type="text" placeholder="Your Name" />
+                <span class="errorMessage"></span>
+              </div>
+              <div class="form-group">
+                <input
+                  class="email"
+                  type="email"
+                  placeholder="Enter Your Email "
+                />
+                <span class="errorMessage"></span>
+              </div>
+              <div class="form-group">
+                <input
+                  class="yourWeb"
+                  type="text"
+                  placeholder="Enter Your Website"
+                />
+                <span class="errorMessage"></span>
+              </div>
+              <div class="form-group">
+                <textarea
+                  name="message"
+                  class="yourMessage"
+                  placeholder="Enter Your Message"
+                ></textarea>
+                <span class="errorMessage"></span>
+              </div>
               <input class="contact-btn" type="submit" value="Contact Me" />
             </form>
           </div>

@@ -21,7 +21,6 @@ const options = {
   root: null,
   threshold: 0.3,
 };
-
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
@@ -146,6 +145,8 @@ btnContainer.forEach((el) => {
   });
 });
 
+// contact form logic
+
 const contactForm = document.querySelector("form");
 const dialog = document.getElementById("dialog");
 const body = document.querySelector("body");
@@ -154,10 +155,81 @@ const emailInput = contactForm.querySelector(".email");
 const webInput = contactForm.querySelector(".yourWeb");
 const messageInput = contactForm.querySelector(".yourMessage");
 const gmailPattern = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+const emailPattern = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
+const errorMessage = document.querySelector(".errorMessage");
+const formGroup = document.querySelectorAll(".form-group");
+const contactBtn = contactForm.querySelector(".contact-btn");
 
+const closeContact = document.querySelector(".cross");
+closeContact.addEventListener("click", (e) => {
+  dialog.close();
+  body.classList.remove("overFlow-hidden");
+  contactForm.reset();
+});
+document.addEventListener("click", (e) => {
+  if (e.target === dialog) {
+    dialog.close();
+    body.classList.remove("overFlow-hidden");
+    contactForm.reset();
+  }
+});
+
+function showSuccess(input) {
+  input.closest(".form-group").querySelector(".errorMessage").innerText = "";
+  return true;
+}
+function showError(input, message) {
+  input.closest(".form-group").querySelector(".errorMessage").innerText =
+    message;
+  return false;
+}
+function checkNameValue() {
+  if (nameInput.value.trim().length === 0) {
+    showError(nameInput, "Name value shouldn't be ampty!");
+  } else if (nameInput.value.length < 3) {
+    showError(nameInput, "Name should be at least 3 characters long!");
+  } else {
+    showSuccess(nameInput);
+    return true;
+  }
+}
+function checkEmailValue() {
+  if (emailInput.value.trim().length === 0) {
+    showError(emailInput, "Email value shoudn't be ampty!");
+  } else if (!gmailPattern.test(emailInput.value.trim())) {
+    showError(emailInput, "We accept only @gmail.com");
+  } else {
+    showSuccess(emailInput);
+    return true;
+  }
+}
+function checkWebValue() {
+  if (webInput.value.trim().length === 0) {
+    showError(webInput, "Website value shouldn't be ampty!");
+  } else if (webInput.value.trim().length < 5) {
+    showError(webInput, "Enter correct website link!");
+  } else {
+    showSuccess(webInput);
+    return true;
+  }
+}
+function checkMessageValue() {
+  if (messageInput.value.trim().length === 0) {
+    showError(messageInput, "Message value shouldn't be ampty!");
+  } else if (messageInput.value.trim().length < 10) {
+    showError(messageInput, "Your message is too short!");
+  } else {
+    showSuccess(messageInput);
+    return true;
+  }
+}
+
+nameInput.addEventListener("input", checkNameValue);
+emailInput.addEventListener("input", checkEmailValue);
+webInput.addEventListener("input", checkWebValue);
+messageInput.addEventListener("input", checkMessageValue);
 contactForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  const emailPattern = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
   fetch("https://borjomi.loremipsum.ge/api/send-message", {
     method: "POST",
     headers: {
@@ -173,47 +245,17 @@ contactForm.addEventListener("submit", (e) => {
     .then((response) => response.json())
     .then((json) => console.log(json))
     .catch((err) => console.error(err));
-  dialog.showModal();
-  body.classList.add("overFlow-hidden");
-  if (nameInput.value.trim().length < 3) {
-    console.log("too short name");
-  }
-  if (!emailPattern.test(emailInput.value.trim())) {
-    console.log("try again");
-  }
-});
-const closeContact = document.querySelector(".cross");
-closeContact.addEventListener("click", (e) => {
-  dialog.close();
-  body.classList.remove("overFlow-hidden");
-  contactForm.reset();
-});
-document.addEventListener("click", (e) => {
-  if (e.target === dialog) {
+
+  const name = checkNameValue();
+  const email = checkEmailValue();
+  const web = checkWebValue();
+  const message = checkMessageValue();
+  if (name && email && web && message) {
+    dialog.showModal();
+    body.classList.add("overFlow-hidden");
+    contactForm.reset();
+  } else {
     dialog.close();
     body.classList.remove("overFlow-hidden");
-    contactForm.reset();
-  }
-});
-nameInput.addEventListener("input", (e) => {
-  if (e.target.value.length < 8) {
-    console.log("try again");
-  }
-});
-emailInput.addEventListener("input", (e) => {
-  if (gmailPattern.test(e.target.value)) {
-    console.log("good");
-  } else {
-    console.log("invalid");
-  }
-});
-webInput.addEventListener("input", (e) => {
-  console.log(e.target.value);
-});
-messageInput.addEventListener("input", (e) => {
-  if (e.target.value.length < 50) {
-    console.log("message words are too short!");
-  } else {
-    console.log("looks good!");
   }
 });

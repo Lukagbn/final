@@ -207,6 +207,17 @@
     padding: 48px;
     margin-top: 55px;
   }
+  #dialog {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+    margin-inline: auto;
+    text-align: justify;
+    left: 0;
+  }
 }
 @media screen and (min-width: 600px) and (max-width: 1024px) {
   .container {
@@ -431,6 +442,17 @@
     padding: 48px;
     margin-top: 55px;
   }
+  #dialog {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+    margin-inline: auto;
+    text-align: justify;
+    left: 0;
+  }
 }
 @media screen and (min-width: 1024px) and (max-width: 1420px) {
   .container {
@@ -650,5 +672,16 @@
     font-size: 21px;
     padding: 48px;
     margin-top: 55px;
+  }
+  #dialog {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+    margin-inline: auto;
+    text-align: justify;
+    left: 0;
   }
 }
