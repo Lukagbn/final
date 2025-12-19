@@ -146,6 +146,7 @@
     flex-direction: row;
     opacity: 1;
     position: static;
+    pointer-events: auto;
   }
   .burger-btn {
     display: none;
