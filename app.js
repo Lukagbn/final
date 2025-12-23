@@ -193,15 +193,21 @@ function showError(input, message) {
   return false;
 }
 function checkNameValue() {
-  if (nameInput.value.trim().length === 0) {
-    showError(nameInput, "Name value shouldn't be ampty!");
-  } else if (nameInput.value.length < 3) {
+  const name = nameInput.value.trim();
+  const namePattern = /^[A-Za-z\s]+$/;
+
+  if (name.length === 0) {
+    showError(nameInput, "Name value shouldn't be empty!");
+  } else if (name.length < 3) {
     showError(nameInput, "Name should be at least 3 characters long!");
+  } else if (!namePattern.test(name)) {
+    showError(nameInput, "Name should contain only letters!");
   } else {
     showSuccess(nameInput);
     return true;
   }
 }
+
 function checkEmailValue() {
   if (emailInput.value.trim().length === 0) {
     showError(emailInput, "Email value shoudn't be ampty!");
